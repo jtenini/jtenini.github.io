@@ -1,0 +1,91 @@
+<h1>Mistakes that intermediate data scientists sometimes make</h1>
+
+<p>
+    If you’ve been doing data science for a while . . . congratulations! you’ve graduated to making different kinds of mistakes. This article is about the most common (and costly) mistakes I see intermediate data scientists make — and how to fix them. But first an analogy about playing pool.
+</p>
+
+<p>
+    So what is an “Intermediate Data Scientist” anyway? This is the sort of person that has launched some models, understands some sophisticated ML methodologies, and knows how to use stack overflow well enough that they don’t have to bother their boss or mentor when they get stuck (usually). If you have a favorite oversampling technique, a favorite boosting framework, or regularly complain that someone is not using the right objective function, then chances are you’re in the intermediate data science category.
+</p>
+
+<p>
+    Ironically, sometimes these folks are worse at providing value than more junior data scientists — I probably was. The reason is that when you’re in this category you sometimes do “more but worse” and not “less but better”. If you’ve ever played pool (pocket billiards), then you may have experienced this.
+</p>
+
+<p>
+    Ironically, sometimes these folks are worse at providing value than more junior data scientists — I probably was. The reason is that when you’re in this category you sometimes do “more but worse” and not “less but better”. If you’ve ever played pool (pocket billiards), then you may have experienced this.
+</p>
+
+<p>
+    At first when you play pool, you just focus on pocketing balls — aim, make the ball, then figure out what shot to take next afterwards. Eventually, you’ll get to the point where you can make reasonably easy shots with good reliability — in other words, you can fit a linear regression. At this point you notice that you shouldn’t just focus on making the shot in front of you, but you should also focus on what your next shot (or two or three) is going to look like: you need to make the ball in front of you and leave yourself a make-able next shot.
+</p>
+
+<p>
+    The reality of making this transition is that at first you end up missing the shot! You try to do more, but accomplish less. In pool, this is maybe unavoidable, you just need to gain more skill, but in data science you can avoid these intermediate pitfalls, and I’ll show you how.
+</p>
+
+<h2>Problem 1 — Your development process lacks strong understandable baselines.</h2>
+
+<p>
+    When you start getting into data science, you don’t tend to dream about fitting solid linear regression models with exquisite data preparation, testing, and evaluation pipelines. Instead, you want to try the newest and most exciting deep-whatever architecture. The fun part is that you’re a seasoned data scientist now, so advanced techniques are expected of you, and this is part of your value proposition. The newfangled framework you’re excited about may actually be the right thing to do!
+</p>
+
+<p>
+    All of this said, complex approaches are a pain — they’re harder to understand, debug, deploy, monitor, and explain to stakeholders. Best practice is to start with a set of strong baseline models (linear/logistic regression, decision tree, business logic) — these solutions are easy to understand, build, and deploy. They are also responsible for adding the majority of the value in the companies I have been a part of. The work of deploying and maintaining a complex solution must be justified over the simplicity of deploying a basic one. The key question you need to answer when developing a model is not “how good is this model?” but rather “how much better is it than a simple one?”.
+</p>
+
+<h2>Problem 2 — You’re not teaching your stakeholders about ML and allowing them to help with development.</h2>
+
+<p>
+    One common trap with experts is that they stop asking for help and advice as much as they did when they were a beginner. At worst, they’re not trying to make things simple for themselves and stakeholders — they’re trying to do the opposite. Let’s consider two different approaches for a data scientist who is using LightGBM to model customer churn so that marketers can intervene with special offers:
+</p>
+
+<h3>Approach 1: (The expert mindset)</h3>
+ 
+<p>
+    “I’m using the most advanced boosting framework available to build a highly accurate model for our customer churn initiative.”
+</p>
+
+<h3>Approach 2: (The beginner mindset)</h3>
+
+<p>
+    “I have a variety of model types from simple to complex. The simplest model is like a scorecard, where each customer gets points for certain risk factors — we add up the points and the customers with the most points are most likely to churn. I also have a fancy and complicated model that is harder to understand (you can’t write it out by hand like the points model), but it allows us to capture more subtle signals in the data. For example, it seems like decreases in product use are big deal for new customers, but not really something to worry about for long-time customers. The simple model will identify 50% of all churning customers with 1000 interventions, while the complex model will identify 60%."
+</p>
+
+<p>
+    The first approach is easy — there’s not much to say, and you get to feel like a hot shot. The second approach is much more work, but it allows your stakeholders to participate. You can now have a meaningful conversation about model sensitivity, feature interactions, non-linearities, and model monitoring — maybe just not using those words. The resulting solution will benefit from having multiple perspectives contribute, and your stakeholder satisfaction will likely be higher. It’s much harder to be critical of a solution that you had an active hand in building!
+</p>
+
+<h2>Problem 3 — You’re building something that will be hard to hand off.</h2>
+
+<p>
+    There’s an odd paradox with expertise involving the tension between “differentiated expertise” and “playing with others”. Usually when you get promoted to some sort of senior title, you get a speech about how you’ll be expected to be a source of differentiated expertise within the team — having skills no one else has so that you can solve problems that no one else can.
+</p>
+
+<p>
+    The paradox is that after you do the hard work of building your differentiated product that no-one else can build, you will be expected to hand it off to anyone on your team for them to nurture and maintain. As stated, this problem seems impossible — but it’s not. It does however require extra work that doesn’t usually fall under ordinary data science product development. That extra work might be summarized as follows:
+</p>
+
+<ul>
+    <li>Simplifying and modularizing the code base.</li>
+    <li>Automating the testing process.</li>
+    <li>Bringing your team with you.</li>
+</ul>
+
+<p>
+    Your solution is complex, but using it doesn’t have to be. Pandas and sklearn are complex, but we probably all feel comfortable working with them. This is because we can import the pieces we need, we can reliably find the right documentation, and we feel confident that these solutions will behave as expected (usually). If pandas was a collection of jupyter notebooks that you had copy and run in the right order to get it to do what you want, then the adoption would look very different.
+</p>
+
+<p>
+    Hand in hand with having a modular, easy to use code base is testing. There’s no feeling quite like being handed a huge, complicated, and sprawling project that has no testing suite. It’s paralyzing! How can I touch anything if I don’t know what I’m breaking? If I correct what I think is a typo or an inefficient line of code, how can I feel confident that it will still behave as intended. The result is often a project that slowly dies because no one wants to work on it out of fear of breaking it. If we instead have a robust suite of unit and integration tests baked into the deployment process, then we don’t have to be so precious with the code. The worst case scenario is that we break something, the tests fail, and the deploy doesn’t happen — the production code will stay put and stay happy. Kids play with toys they understand and can take a beating (like a steel framed bicycle), but the holographic Charizard pokemon card just sits on the shelf — a cool trophy, but often ignored and ultimately not that useful. Data scientists are similar.
+</p>
+
+<p>
+    Finally, your team will not be able to take over solutions if they’re hearing about it (and the concepts and tools behind it) for the first time in the hand-off meeting. Arguably the most important job of senior scientists is raising the knowledge base and skill set of those around them. Ideally, by the time you are passing off a project, everyone on your team has heard you explaining, demonstrating, and debating design decisions many times already in demos, design sessions, and learning sessions. When you hand off your contextual multi-armed bandit recommendation system it’s much better it’s better to hear “oh gosh, I know more about that thing then I ever thought I would” rather than “what’s a bandit?”.
+</p>
+
+<h2>TL;DR</h2>
+
+<p>
+    In summary, when you start to get good at data science, you will be tempted to emphasize the things that set you apart — your differentiated expertise, skill set, and knowledge. It’s easy to do this by holding this skillset to yourself and making it seem exclusive. This is a recipe for disaster. You will be much better served by remembering the fundamentals that made you a great junior data scientist and bringing others along with you. Aim to make your differentiated expertise accessible and and part of everyone’s vocabulary. In this way, you’ll continue to grow your impact as well as the value of those you work with.
+</p>
