@@ -7,13 +7,43 @@
 <p>
     The progression of trust usually goes like this:
     <ol>
-        <li>We establish a baseline which has a certain level of trust.</li>
+        <li>We establish a baseline or formalize the existing process which already has a certain level of trust.</li>
         <li>We demonstrate an improvement over the baseline at the level of model or process quality statistics.</li>
         <li>We demonstrate improvement over the baseline at the level of process testing.</li>
     </ol>
 </p>
 
+<p>
+    If you find yourself in a case where you are able to demonstrate a comprehensive improvement over the baseline or existing process, then the situation is probably pretty simple - just switch to the new system, it's always better[1]. More likely though, something like this is true - your new system is usually better (better on average) but you can find cases where the old process was better[2]. In these more nuanced cases, it would be very useful to know when you could trust each system.
+</p>
+
+<p>
+    When I was a kid, it was very common to ask someone what time it is[3]. This question came with two typical responses:
+
+    <ul>
+        <li>The correct time.</li>
+        <li>The response "I don't know" or equivalent.</li>
+    </ul>
+
+    This ability to gauge uncertainty is crucial in our ability to learn from one another and as a community. Indeed, it is very rare to find one person who knows more or is better at making decisions in every case - instead we have a variety of opinions and we are able to assign or solicit signals as to how much we should trust each position.
+</p>
+
+<p>
+    In particular, it would be really bad if the person we asked for the time responded confidently with an incorrect time they made up.[4] In any case, (suffienciently motivated by the above discussion) we turn now to different methodologies for quantifying uncertainty.
+</p>
+
 <h2>Bayes rule</h2>
+
+<p>
+    Bayes' rule gives us a helpful way to estimate a posterior distribution in the presence of a prior belief and a likelihood. Let's define these concepts with some suggestive and motivated language you likely won't find in a probability textbook:
+</p>
+
+<ul>
+    <li>Posterior distribution: What we think about a parameter in the presence of data.</li>
+    <li>Prior distribution: What we thought about that parameter before we had any data.</li>
+    <li>Likelihood: How likely the data we have is assuming our parameter beliefs are true.</li>
+</ul>
+
 
 <h2>Null hypothesis testing</h2>
 
@@ -22,3 +52,20 @@
 <h2>Confidence intervals in linear regression</h2>
 
 <h2>Bootstrapping</h2>
+
+<p>
+    [1] It's maybe a bit more complicated than this - maybe the old process is cheaper, faster, better understood (does not require new training), or produces useful artifacts related to other processes. Or maybe the switching costs are not compensated by the increase in efficiency.
+</p>
+
+<p>
+    [2] For example, maybe the two processes in question really come down to a model. One model may be better than the other in aggregate (higher AUC) but you will almost certainly find cases where individual predictions are better on the other model.
+</p>
+
+<p>
+    [3] I don't know if this is still a common question or not, but it's believable that knowledge of the current time and date has become more widespread.
+</p>
+
+<p>
+    [4] I suspect this is one important reason why most people don't like liars or other people who confidently tell us things that aren't true.
+</p>
+
