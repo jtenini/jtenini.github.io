@@ -44,7 +44,68 @@
     <li>Likelihood: How likely the data we have is assuming our parameter beliefs are true.</li>
 </ul>
 
-These are still a bit abstract, so let's give a concrete example.
+<p>
+    We can derive Bayes' rule from the definition of conditional probability:
+</p>
+
+
+
+<p>
+    P(H | X) * P(X) = P(X &cap; H) = P(X | H) * P(H)
+</p>
+
+<p>
+    Solving for one conditional probability, we get the usual formulation of Bayes' rule:
+</p>
+
+<p>
+    P(X | H) = P(H | X) * P(X) / P(H)
+</p>
+
+<p>
+    Which we might say succintly in words as: "Posterior is proportional to prior times likelihood."
+</p>
+
+<p>
+    Let's see what kind of calculation this enables now. Specifically, if we fix some data H and a prior distribution P(X), can we calculate P(X | H)?
+</p>
+
+<p>
+    Since H is fixed, whatever P(H) is, it's a constant (the right constant to make our P(X | H) integrate to 1 as all probability distributions should) so we can ignore it for now.
+</p>
+
+<p>
+    This means, our ability to calculate the posterior comes down to our ability to calculate the likelihood function P(X | H).
+</p>
+
+<p>
+    Like all good students of probablity, let start with an easy case of flipping coins.
+</p>
+
+<h3>Beta distributions and bernouilli likelihoods</h3>
+
+
+<p>
+    Suppose we have a mysterious coin given to us by a magician. On one side of the coin is printed "heads" and on the other is printed "tails". We intend to use this coin for various games of chance and would like it to be fair. That said, this magician is quite mysterious and we have no clue how this coin is going to behave. Formalizing our thoughts a bit, we can say that there is some rate at which coin flips will come up "heads" - we call this rate the "heads rate" and denote it with X.
+</p>
+
+<p>
+    Since we have no idea what p might be, we will use a uniform distribution to describe our prior beliefs. That is,
+</p>
+
+<p>
+    P(X) = 1 for 0 &leq; X &leq; 1
+    P(X) = 0 otherwise 
+</p>
+
+<p>
+    If we want to have an informed belief about the true heads rate of this mysterious coin, we should go about generating data. So, let's say that we flip the coin 10 times and come up with the following history: {T, H, T, T, T, T, H, H, T, T}. In all, 3 heads and 7 tails.
+</p>
+
+<p>
+    Given a true heads rate of p, what is the likelihood of seeing this data? Well, it would be: (1-p)^7 * (p^3).
+</p>
+
 
 
 <h2>Null hypothesis testing</h2>
