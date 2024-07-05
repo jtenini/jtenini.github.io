@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1720034348 "/Users/josephtenini/repos/jtenini.github.io/intro_to_ml_tex/intro_to_ml.tex" "intro_to_ml.pdf" "intro_to_ml" 1720034348
-  "/Users/josephtenini/repos/jtenini.github.io/intro_to_ml_tex/intro_to_ml.tex" 1720034347 10272 63e5bf1ad95251d9d0e5434a1a7d81a5 ""
+["pdflatex"] 1720173141 "/Users/josephtenini/repos/jtenini.github.io/intro_to_ml_tex/intro_to_ml.tex" "intro_to_ml.pdf" "intro_to_ml" 1720173142
+  "/Users/josephtenini/repos/jtenini.github.io/intro_to_ml_tex/intro_to_ml.tex" 1720173140 10271 d39df24c287fa19973cda0e2d276dd0a ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -51,8 +51,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1676994170 2826450 e84398806608b7cf485f74de198190af ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "intro_to_ml.aux" 1720034348 1769 f4385a720e6b91cba73338a97080cb09 "pdflatex"
-  "intro_to_ml.tex" 1720034347 10272 63e5bf1ad95251d9d0e5434a1a7d81a5 ""
+  "intro_to_ml.aux" 1720173142 1769 f4385a720e6b91cba73338a97080cb09 "pdflatex"
+  "intro_to_ml.tex" 1720173140 10271 d39df24c287fa19973cda0e2d276dd0a ""
   (generated)
   "intro_to_ml.aux"
   "intro_to_ml.log"
